@@ -37,9 +37,9 @@ router.post('/signup', (req, res) => {
     } else {
       res.sendStatus(401)
     }
-  })
+})
 
-  router.post('/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     const foundUser = await User.findOne({ username: req.body.username })
     if (foundUser && foundUser.password === req.body.password) {
         const payload = {id: foundUser.id}
