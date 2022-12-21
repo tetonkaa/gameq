@@ -9,5 +9,12 @@
 
 
 h1{
-    font-family: dimitri_swankregular
+    font-family: dimitri_swankregular;
+    font-size: 44px;
+    text-align: center;
+    color:aliceblue;
+}
+
+body{
+    background-color: rebeccapurple;
 }
