@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from './pages/Home'
+import GameCard from './components/GameCard'
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
       </Routes>
+      <GameCard />
     </main>
   );
 }
