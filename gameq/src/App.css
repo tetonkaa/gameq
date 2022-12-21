@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'dimitri_swankregular';
+    src: url('../public/fonts/tfont2-webfont.woff') format('woff'),
+         url('../public/fonts/tfont2-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+h1{
+    font-family: dimitri_swankregular
+}
