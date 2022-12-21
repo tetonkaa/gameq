@@ -15,7 +15,7 @@ export default function Home(props) {
 
     // render JSX
     return (
-        <button class="loginbtn btn btn-dark" onClick={() => { props.setLogInStatus(true) }}>
+        <button class="loginbtn btn btn-dark" onClick={() => { props.setIsLoggedIn(true) }}>
             <h1>Log in</h1>
         </button>
     )
