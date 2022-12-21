@@ -3,10 +3,7 @@ import axios from 'axios'
 import './gameCard.css'
 
 const GameCard = () => {
-    const [currentGame1, setCurrentGame1] = useState({})
-    const [currentGame2, setCurrentGame2] = useState({})
-    const [currentGame3, setCurrentGame3] = useState({})
-    const [currentGame4, setCurrentGame4] = useState({})
+    const [currentGame, setCurrentGame] = useState([])
 
     useEffect(() => {
         getAllGames()
@@ -17,53 +14,33 @@ const GameCard = () => {
         return data
     }
     
-    function getAllGames() {
-        getGameInfo('counter-strike-global-offensive')
-        .then(data => setCurrentGame1(data))
-        getGameInfo('fortnite')
-        .then(data => setCurrentGame2(data))
-        getGameInfo('call-of-duty-modern-warfare-ii')
-        .then(data => setCurrentGame3(data))
-        getGameInfo('escape-from-tarkov')
-        .then(data => setCurrentGame4(data))
+    async function getAllGames() {
+        let arrOfGames = []
+        const csgo = await getGameInfo('counter-strike-global-offensive')
+        arrOfGames.push(csgo)
+        const fortnite = await getGameInfo('fortnite')
+        arrOfGames.push(fortnite)
+        const mw2 = await getGameInfo('call-of-duty-modern-warfare-ii')
+        arrOfGames.push(mw2)
+        const escape = await getGameInfo('escape-from-tarkov')
+        arrOfGames.push(escape)
+        setCurrentGame(arrOfGames)
         
     }
     
     
     return(
         <main className="card-container">
+            { currentGame.map((game, i) =>
             <div className="card" style={{width: "18rem"}}>
-            <img className="card-img-top" src={currentGame1.background_image} alt="Card image cap" />
+            <img className="card-img-top" src={game.background_image} alt="Card image cap" />
             <div className="card-body">
-                <h5 className="card-title">{currentGame1.name}</h5>
-                <p className="card-text">{currentGame1.rating}</p>
+                <h5 className="card-title">{game.name}</h5>
+                <p className="card-text">{game.rating}</p>
                 <a href="#" className="btn btn-primary">LIKE</a>
             </div>
             </div>
-            <div className="card" style={{width: "18rem"}}>
-            <img className="card-img-top" src={currentGame2.background_image} alt="Card image cap" />
-            <div className="card-body">
-                <h5 className="card-title">{currentGame2.name}</h5>
-                <p className="card-text">{currentGame2.rating}</p>
-                <a href="#" className="btn btn-primary">LIKE</a>
-            </div>
-            </div>
-            <div className="card" style={{width: "18rem"}}>
-            <img className="card-img-top" src={currentGame3.background_image} alt="Card image cap" />
-            <div className="card-body">
-                <h5 className="card-title">{currentGame3.name}</h5>
-                <p className="card-text">{currentGame3.rating}</p>
-                <a href="#" className="btn btn-primary">LIKE</a>
-            </div>
-            </div>
-            <div className="card" style={{width: "18rem"}}>
-            <img className="card-img-top" src={currentGame4.background_image} alt="Card image cap" />
-            <div className="card-body">
-                <h5 className="card-title">{currentGame4.name}</h5>
-                <p className="card-text">{currentGame4.rating}</p>
-                <a href="#" className="btn btn-primary">LIKE</a>
-            </div>
-            </div>
+            )}
         </main>
     )
 }

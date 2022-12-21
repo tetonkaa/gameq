@@ -19,8 +19,7 @@ function App() {
         <Route path="/" element={<Home setIsLoggedIn={setIsLoggedIn} />}></Route>
         <Route path="/signup" element={<SignUp  />}></Route>
       </Routes>
-      {}
-      <GameCard />
+      
     </main>
   );
 }

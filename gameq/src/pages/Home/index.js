@@ -1,7 +1,8 @@
 // packages
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import './main.css'
+import './main.css';
+import GameCard from '../../components/GameCard'
 
 export default function Home(props) {
     const navigate = useNavigate()
@@ -15,8 +16,9 @@ export default function Home(props) {
 
     // render JSX
     return (
-        <button class="loginbtn btn btn-dark" onClick={() => { props.setIsLoggedIn(true) }}>
-            <h1>Log in</h1>
-        </button>
+        <main>
+            <GameCard />
+        </main>
+        
     )
 }
