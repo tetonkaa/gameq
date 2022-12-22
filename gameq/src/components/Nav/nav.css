@@ -1,3 +1,5 @@
+
+
 .sidebar {
     height: 100%;
     width: 0; 
@@ -12,7 +14,7 @@
     }
     
     
-    .sidebar a {
+    .sidebar a, p {
     padding: 100px 8px 35px 50px;
     text-decoration: none;
     font-size: 25px;
@@ -22,8 +24,9 @@
     }
     
    
-    .sidebar a:hover {
+    .sidebar a:hover, p:hover {
     color: rebeccapurple;
+    cursor: pointer;
     }
     
    

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios'
+import "./main.css"
 
 export default function Login (props) {
     // state declarations
@@ -43,7 +44,7 @@ export default function Login (props) {
                         value={formState.password} />
                 </div>
 
-                <button type='submit' >Login</button>
+                <button type='submit'class="button" >Login</button>
             </form>
         </div>
     )
