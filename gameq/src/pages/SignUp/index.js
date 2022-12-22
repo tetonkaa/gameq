@@ -44,6 +44,31 @@ export default function SignUp({setIsLoggedIn}) {
                         value={formState.password} />
                 </div>
 
+                <div className="input-text">
+                    <label htmlFor='Bio'>Bio</label>
+                    <input
+                        type='textarea'
+                        name='bio'
+                        onChange={handleChange}
+                        value={formState.bio} />
+                </div>
+                <div className="input-text">
+                    <label htmlFor='twitchLink'>Twitch Link</label>
+                    <input
+                        type='text'
+                        name='twitch link'
+                        onChange={handleChange}
+                        value={formState.twitchLink} />
+                </div>
+                <div className="input-text">
+                    <label htmlFor='fav-game-id'>Favorite</label>
+                    <input
+                        type='text'
+                        name='favorite'
+                        onChange={handleChange}
+                        value={formState.favoriteGameId} />
+                </div>
+
                 <button type='submit' class="button" >Sign Up</button>
             </form>
         </div>
