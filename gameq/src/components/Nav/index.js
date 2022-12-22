@@ -11,7 +11,7 @@ function openNav() {
     document.getElementById("mySidebar").style.width = "0";
   
   } 
-function Nav(isLoggedIn) {
+function Nav({isLoggedIn}) {
   console.log(isLoggedIn)
   return(
             <nav>
@@ -19,9 +19,13 @@ function Nav(isLoggedIn) {
             <a href="javascript:void(0)" className="closebtn" onClick={closeNav}> &#8592; </a>
             <Link to='/' >Home</Link>
             <Link to='/Profile' >Profile</Link>
+            { !isLoggedIn ?
+            <> 
             <Link to='/signup' >Sign Up</Link>
             <Link to='/login' >Log In</Link>
-            <p onClick={() => localStorage.clear()}>Log out</p>
+            </>
+            : <p onClick={() => localStorage.clear()}>Log out</p>
+            }
             </div>
 
         <div className="btncontainer">

@@ -26,7 +26,7 @@ function App() {
       :null }
       <Routes>
         <Route path="/" element={<Home setIsLoggedIn={setIsLoggedIn} />}></Route>
-        <Route path="/signup" element={<SignUp  />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/login" element={<Login  />}></Route>
       </Routes>
       
