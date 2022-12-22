@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import axios from 'axios'
 
 export default function SignUp(props) {
     // state declarations
     const [formState, setFormState] = useState({
         username: '',
         password: '',
-        endpoint: 'signup'
     })
 
     // update the input value as a user types
@@ -13,11 +13,18 @@ export default function SignUp(props) {
         setFormState({ ...formState, [event.target.name]: event.target.value })
     }
 
+    async function submitHandler(event) {
+        event.preventDefault()
+        const { data } = await axios.post('http://localhost:8000/user/signup', formState)
+        localStorage.token = data.token
+        console.log(localStorage)
+    }
+
     return (
         <div className="container">
             <h2>Sign Up</h2>
 
-            <form>
+            <form onSubmit={submitHandler}>
                 <div className="input-text">
                     <label htmlFor='username'>Username</label>
                     <input
@@ -36,7 +43,7 @@ export default function SignUp(props) {
                         value={formState.password} />
                 </div>
 
-                <button onClick={(e) => props.handleSubmit(e, formState)}>Sign Up</button>
+                <button type='submit' >Sign Up</button>
             </form>
         </div>
     )
