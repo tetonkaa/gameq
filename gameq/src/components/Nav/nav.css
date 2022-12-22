@@ -1,0 +1,63 @@
+.sidebar {
+    height: 100%;
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 1);
+    overflow-x: hidden; 
+    padding-top: 40px; 
+    transition: 0.5s; 
+    }
+    
+    
+    .sidebar a {
+    padding: 100px 8px 35px 50px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fdfdfd;
+    display: block;
+    transition: 0.3s;
+    }
+    
+   
+    .sidebar a:hover {
+    color: rebeccapurple;
+    }
+    
+   
+    .closebtn {
+    position: absolute;
+      top: 30%;
+      right: 10px;
+      font-size: 24px;
+      margin-left: 50px;
+    }
+    
+    
+    .openbtn {
+    font-size: 45px;
+    cursor: pointer;
+    background-color: rgba(17, 17, 17, 1);
+    color: white;
+    padding: 10px 15px 10px 15px;
+    border: none;
+    font-family: dimitri_swankregular;
+    }
+    
+    .openbtn:hover {
+    background-color: rgb(255, 255, 255);
+    color: rebeccapurple;
+    transition: .5s
+    }
+
+    .btncontainer{
+        margin: 20px;
+    }
+    
+  
+     @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+      .sidebar a {font-size: 18px;}
+    }
