@@ -15,7 +15,7 @@ function Nav() {
   return(
             <nav>
             <div id="mySidebar" className="sidebar">
-            <a href="javascript:void(0)" className="closebtn" onClick={closeNav}> ></a>
+            <a href="javascript:void(0)" className="closebtn" onClick={closeNav}> &#8592; </a>
             <Link to='/' >Home</Link>
             <Link to='/signup' >Sign Up</Link>
             <Link to='/login' >Log In</Link>
