@@ -1,6 +1,6 @@
 .container{
     width: 350px;
-    height: 180px;
+    height: 300px;
     background-color: aliceblue;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .button{
-    margin: 20px;
+    margin: 15px;
     background-color: blueviolet;
     color: white;
 }
@@ -47,9 +47,10 @@
 
   
   .button {
-    position: absolute;
+    position: relative;
     left: calc(50% - 3em);
     top: calc(50% - 2em);
+    border-radius: 2em;
     
     
   }  
