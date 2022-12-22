@@ -24,7 +24,6 @@ function App() {
       { isLoggedIn ?
       <h1>you're logged in</h1>
       :null }
-      <button onClick={() => localStorage.clear()}>Log out</button>
       <Routes>
         <Route path="/" element={<Home setIsLoggedIn={setIsLoggedIn} />}></Route>
         <Route path="/signup" element={<SignUp  />}></Route>
