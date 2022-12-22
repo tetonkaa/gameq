@@ -1,6 +1,6 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import './nav.css'
-    function Nav(isLoggedIn) {
+    function Nav() {
         return(
             <nav>
             <div class="content">
