@@ -19,15 +19,15 @@ function App() {
 
   return (
     <main>
-      <Nav isLoggedIn={isLoggedIn} />
+      <Nav setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />
       <h1>gameQ</h1>
       { isLoggedIn ?
       <h1>you're logged in</h1>
       :null }
       <Routes>
-        <Route path="/" element={<Home setIsLoggedIn={setIsLoggedIn} />}></Route>
-        <Route path="/signup" element={<SignUp  />}></Route>
-        <Route path="/login" element={<Login  />}></Route>
+        <Route path="/" element={<Home  />}></Route>
+        <Route path="/signup" element={<SignUp setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}></Route>
+        <Route path="/login" element={<Login  setIsLoggedIn={setIsLoggedIn}/>}></Route>
       </Routes>
       
     </main>
