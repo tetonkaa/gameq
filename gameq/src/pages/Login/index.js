@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios'
 import "./main.css"
 
-export default function Login (props) {
+export default function Login ({setIsLoggedIn}) {
     // state declarations
     const [formState, setFormState] = useState({
         username: '',
@@ -18,7 +18,7 @@ export default function Login (props) {
         event.preventDefault()
         const { data } = await axios.post('http://localhost:8000/user/login', formState)
         localStorage.token = data.token
-        console.log(localStorage)
+        setIsLoggedIn(true)
     }
 
     return (
