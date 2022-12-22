@@ -15,7 +15,7 @@ function Nav(props) {
     function logout() {
         localStorage.clear()
         props.setIsLoggedIn(false)
-        console.log(props.isLoggedIn)
+        props.setUser({})
     }
   
   return(

@@ -7,36 +7,20 @@ const config = require('../config/config')
 const User = require('../models/user')
 //routes
 
-router.post('/signup', (req, res) => {
-    if (req.body.username && req.body.password) {
-      let newUser = {
-        username: req.body.username,
-        password: req.body.password
-      }
-      User.findOne({ username: req.body.username })
-        .then((user) => {
-          if (!user) {
-            User.create(newUser)
-              .then(user => {
-                if (user) {
-                  let payload = {
-                    id: newUser.id
-                  }
-                  let token = jwt.encode(payload, config.jwtSecret)
-                  res.json({
-                    token: token
-                  })
-                } else {
-                  res.sendStatus(401)
-                }
-              })
-          } else {
-            res.sendStatus(401)
-          }
-        })
-    } else {
+router.post('/signup', async (req, res) => {
+  const foundUser = await db.User.findOne({ username: req.body.username})
+  console.log(foundUser)
+  if(!foundUser){
+      const createdUser = await db.User.create(req.body)
+      const payload = {id: createdUser._id}
+      const token = jwt.encode(payload, config.jwtSecret)
+      res.json({
+          user: createdUser,
+          token: token
+      })
+  } else {
       res.sendStatus(401)
-    }
+  }
 })
 
 router.post('/login', async (req, res) => {
@@ -58,5 +42,17 @@ router.get('/profile/:id', async (req, res) => {
     const user = await User.findById(req.params.id)
     res.json(user)
 })
+
+router.get('/', async (req, res) => {
+  const token = req.headers.authorization
+  const decode = jwt.decode(token, config.jwtSecret)
+  const foundUser = await db.User.findById(decode.id)
+  res.json(foundUser)
+})
+//make a route that can be accessed on the profile page to display unique user info
+//
+
+//get the user id
+
 
 module.exports = router
