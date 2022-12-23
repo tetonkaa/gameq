@@ -4,7 +4,14 @@ import axios from 'axios'
  function Profile(props) {
 
     return(
-        <h1>{props.user.username}</h1>
+        <main>
+            <h1>{props.user.username}</h1>
+            <br />
+            <h1>{props.user.bio}</h1>
+            <br />
+            <h1>{props.user.twitchLink}</h1>
+        </main>
+        
     )
  }
 

@@ -56,17 +56,9 @@ export default function SignUp({setIsLoggedIn}) {
                     <label htmlFor='twitchLink'>Twitch Link</label>
                     <input
                         type='text'
-                        name='twitch link'
+                        name='twitchLink'
                         onChange={handleChange}
                         value={formState.twitchLink} />
-                </div>
-                <div className="input-text">
-                    <label htmlFor='fav-game-id'>Favorite</label>
-                    <input
-                        type='text'
-                        name='favorite'
-                        onChange={handleChange}
-                        value={formState.favoriteGameId} />
                 </div>
 
                 <button type='submit' class="button" >Sign Up</button>
