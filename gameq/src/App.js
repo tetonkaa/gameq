@@ -6,10 +6,13 @@ import SignUp from './pages/SignUp'
 import React, { useState, useEffect } from 'react';
 import Nav from './components/Nav'
 import Login from './pages/Login'
+import SearchForm from "./components/SearchForm";
+import SearchResults from "./pages/SearchResults";
 
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
 
   useEffect(() => {
     if (localStorage.token) {
@@ -17,8 +20,15 @@ function App() {
     }
   }, [localStorage.token])
 
+
+
   return (
     <main>
+
+    <div>
+    
+    
+    </div>
       <Nav isLoggedIn={isLoggedIn} />
       <h1>gameQ</h1>
       { isLoggedIn ?
@@ -29,6 +39,7 @@ function App() {
         <Route path="/" element={<Home setIsLoggedIn={setIsLoggedIn} />}></Route>
         <Route path="/signup" element={<SignUp  />}></Route>
         <Route path="/login" element={<Login  />}></Route>
+        <Route path= "/search"   element={<SearchResults />}></Route>
       </Routes>
       
     </main>
