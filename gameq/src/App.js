@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import SearchForm from "./components/SearchForm";
 import SearchResults from "./pages/SearchResults";
 import axios from "axios";
+import Profile from './pages/Profile'
 
 
 function App() {
@@ -44,15 +45,16 @@ function App() {
     
     
     </div>
-      <Nav isLoggedIn={isLoggedIn} />
+      <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>
       <h1>gameQ</h1>
       { isLoggedIn ?
       <h1>you're logged in</h1>
       :null }
       <Routes>
         <Route path="/" element={<Home setIsLoggedIn={setIsLoggedIn} />}></Route>
-        <Route path="/signup" element={<SignUp  />}></Route>
-        <Route path="/login" element={<Login  />}></Route>
+        <Route path="/signup" element={<SignUp  setIsLoggedIn={setIsLoggedIn}/>}></Route>
+        <Route path="/login" element={<Login  setIsLoggedIn={setIsLoggedIn}/>}></Route>
+        <Route path='/profile' element={<Profile setIsLoggedIn={setIsLoggedIn} user={user}/>}></Route>
         <Route path= "/search"   element={<SearchResults />}></Route>
       </Routes>
       
