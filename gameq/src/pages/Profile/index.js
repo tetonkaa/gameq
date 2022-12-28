@@ -10,6 +10,7 @@ import axios from 'axios'
             <h1>{props.user.bio}</h1>
             <br />
             <h1>{props.user.twitchLink}</h1>
+            <h1>{props.user.favGameId}</h1>
         </main>
         
     )

@@ -49,10 +49,18 @@ router.get('/', async (req, res) => {
   const foundUser = await db.User.findById(decode.id)
   res.json(foundUser)
 })
-//make a route that can be accessed on the profile page to display unique user info
-//
 
-//get the user id
+router.put('/', async (req, res) => {  
+  const token = req.headers.authorization
+  const decode = jwt.decode(token, config.jwtSecret)
+  const updatedUser = await db.User.findByIdAndUpdate(
+    decode.id,
+    { $set: req.body },
+    { new: true }
+    )
+    res.json(updatedUser)
+})
+
 
 
 module.exports = router
