@@ -10,17 +10,21 @@ const SearchResults = ({}) => {
     const [searchedGames, setSearchedGames] = useState([]);
     const [selectedGame, setSelectedGame] = useState("")
     
-
-
-    useEffect(() => {
-        // axios put to update favorite game route
-      
-    }, [selectedGame])
+    async function setGame() {
+      const config = {
+        headers:{
+          'Authorization': localStorage.getItem('token')
+        }
+      };
+      const gameId = { favGameId: selectedGame }
+      await axios.put("http://localhost:8000/user", gameId, config)
+    }
      
 
     console.log(selectedGame)
     return (
       <div className="games">
+        <button onClick={() => setGame()}>Set Favorite Game</button>
         <SearchForm  searchedGames={searchedGames} setSearchedGames={setSearchedGames} />
           {searchedGames.map((games, i) => (
           <div key={i} className="games">
