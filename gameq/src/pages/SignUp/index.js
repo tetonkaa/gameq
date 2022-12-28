@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useEffect} from 'react';
+import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 import "../Login/main.css"
 
-export default function SignUp({setIsLoggedIn}) {
+export default function SignUp({setIsLoggedIn, isLoggedIn}) {
     // state declarations
     const [formState, setFormState] = useState({
         username: '',
@@ -20,6 +22,14 @@ export default function SignUp({setIsLoggedIn}) {
         localStorage.token = data.token
         setIsLoggedIn(true)
     }
+
+    const navigate = useNavigate()
+    
+    useEffect(() => {
+        if (isLoggedIn) {
+            navigate('/Profile')
+        }
+    }, [isLoggedIn])
 
     return (
         <div className="container">

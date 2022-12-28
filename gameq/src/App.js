@@ -52,8 +52,8 @@ function App() {
       :null }
       <Routes>
         <Route path="/" element={<Home setIsLoggedIn={setIsLoggedIn} />}></Route>
-        <Route path="/signup" element={<SignUp  setIsLoggedIn={setIsLoggedIn}/>}></Route>
-        <Route path="/login" element={<Login  setIsLoggedIn={setIsLoggedIn}/>}></Route>
+        <Route path="/signup" element={<SignUp  setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}></Route>
+        <Route path="/login" element={<Login  setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}></Route>
         <Route path='/profile' element={<Profile setIsLoggedIn={setIsLoggedIn} user={user}/>}></Route>
         <Route path= "/search"   element={<SearchResults />}></Route>
       </Routes>
