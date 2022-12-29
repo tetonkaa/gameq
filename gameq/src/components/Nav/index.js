@@ -23,7 +23,9 @@ function Nav(props) {
             <div id="mySidebar" className="sidebar">
             <a href="javascript:void(0)" className="closebtn" onClick={closeNav}> &#8592; </a>
             <Link to='/' >Home</Link>
+            { props.isLoggedIn ?
             <Link to='/Profile' >Profile</Link>
+            : null}
             { !props.isLoggedIn ?
             <> 
             <Link to='/signup' >Sign Up</Link>
