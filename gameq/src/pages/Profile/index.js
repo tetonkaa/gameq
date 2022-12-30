@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import axios from 'axios'
+import Comment from '../../components/Comment'
 import './gameCard.css'
 
  function Profile(props) {
     const [currentGame, setCurrentGame] = useState({})
+    
 
     
     
@@ -18,10 +20,10 @@ import './gameCard.css'
         console.log(game)
         setCurrentGame(game)
     }
-    
+
     useEffect(() => {
-        console.log(currentGame)
         getTheGame()
+        
     },[])
     
 
@@ -34,14 +36,15 @@ import './gameCard.css'
             <h1>{props.user.twitchLink}</h1>
             <h1>Favorite Game</h1>
             <div className='card-container'>
-            <div className="card" style={{width: "18rem"}}>
-            <img className="card-img-top" src={currentGame.background_image} alt="Card image cap" />
-            <div className="card-body">
+                <div className="card" style={{width: "18rem"}}>
+                <img className="card-img-top" src={currentGame.background_image} alt="Card image cap" />
+                <div className="card-body">
                 <h5 className="card-title">{currentGame.name}</h5>
                 <p className="card-text">{currentGame.rating}</p>
-            </div>
+                </div>
             </div>
             <Link to="/search"><button className='btn btn-secondary changeGame'>Change Favorite Game</button></Link>
+            <Comment />
             </div>
             
         </main>

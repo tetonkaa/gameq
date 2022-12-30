@@ -50,6 +50,8 @@ router.get('/', async (req, res) => {
   res.json(foundUser)
 })
 
+
+// set user's favorite game
 router.put('/', async (req, res) => {  
   const token = req.headers.authorization
   const decode = jwt.decode(token, config.jwtSecret)
@@ -59,6 +61,20 @@ router.put('/', async (req, res) => {
     { new: true }
     )
     res.json(updatedUser)
+})
+
+// User comment
+
+router.put('/profile-comment', async (req, res) => {
+  const token = req.headers.authorization
+  const decode = jwt.decode(token, config.jwtSecret)
+  const updatedUser = await db.User.findByIdAndUpdate(
+    decode.id,
+    { $push: { comments: req.body} },
+    { new: true } 
+    )
+    res.json(updatedUser)
+
 })
 
 
