@@ -24,7 +24,7 @@ import './gameCard.css'
     useEffect(() => {
         getTheGame()
         
-    },[])
+    })
     
 
     return(
