@@ -8,6 +8,7 @@ const passport = require('./config/passport')()
 const db = require('./models')
 //controllers
 const userCtrl = require('./controllers/users')
+const commentCtrl = require('./controllers/comments')
 
 //middleware
 app.use(cors())
@@ -15,7 +16,8 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(passport.initialize())
 //use controllers
-app.use('/user', userCtrl)
+app.use('/user', userCtrl);
+app.use('/comment', commentCtrl);
 
 //listener
 app.listen(process.env.PORT, () => {

@@ -1,4 +1,6 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, Navigate } from 'react-router-dom'
+import {useState} from 'react'
+
 import './nav.css'
 
 function openNav() {
@@ -12,10 +14,17 @@ function openNav() {
   
   } 
 function Nav(props) {
+  const [toHome, setToHome] = useState('false')
+
+    if (toHome === true) {
+      return <Navigate to="/"></Navigate>
+    }
+
     function logout() {
         localStorage.clear()
         props.setIsLoggedIn(false)
         props.setUser({})
+        setToHome(true)
     }
   
   return(

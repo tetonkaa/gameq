@@ -15,6 +15,7 @@ import Profile from './pages/Profile'
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
+  const [newComment, setNewComment] = useState(true)
 
   async function getUser(){
     const config = {
@@ -50,7 +51,7 @@ function App() {
         <Route path="/" element={<Home setIsLoggedIn={setIsLoggedIn} />}></Route>
         <Route path="/signup" element={<SignUp  setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}></Route>
         <Route path="/login" element={<Login  setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}></Route>
-        <Route path='/profile' element={<Profile setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} user={user} />}></Route>
+        <Route path='/profile' element={<Profile setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} user={user} setNewComment={setNewComment} newComment={newComment} />}></Route>
         <Route path= "/search"   element={<SearchResults />}></Route>
       </Routes>
       
