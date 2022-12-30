@@ -1,14 +1,21 @@
 import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Navigate } from "react-router-dom";
 import SearchForm from '../../components/SearchForm';
+
 
 
 
 const SearchResults = ({}) => {
 
     const [searchedGames, setSearchedGames] = useState([]);
-    const [selectedGame, setSelectedGame] = useState("")
+    const [selectedGame, setSelectedGame] = useState("");
+    const [toProfile, setToProfile] = useState('false')
+
+    if (toProfile === true) {
+      return <Navigate to="/profile"></Navigate>
+    }
     
     async function setGame() {
       const config = {
@@ -18,6 +25,7 @@ const SearchResults = ({}) => {
       };
       const gameId = { favGameId: selectedGame }
       await axios.put("http://localhost:8000/user", gameId, config)
+      setToProfile(true);
     }
      
 

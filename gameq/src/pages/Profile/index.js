@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route, Link } from "react-router-dom";
 import axios from 'axios'
 import './gameCard.css'
 
@@ -28,10 +29,10 @@ import './gameCard.css'
         <main>
             <h1>{props.user.username}</h1>
             <br />
-            <h2>{props.user.bio}</h2>
+            <h1>{props.user.bio}</h1>
             <br />
-            <a>{props.user.twitchLink}</a>
-            <h1>My Favorite Game</h1>
+            <h1>{props.user.twitchLink}</h1>
+            <h1>Favorite Game</h1>
             <div className='card-container'>
             <div className="card" style={{width: "18rem"}}>
             <img className="card-img-top" src={currentGame.background_image} alt="Card image cap" />
@@ -40,7 +41,9 @@ import './gameCard.css'
                 <p className="card-text">{currentGame.rating}</p>
             </div>
             </div>
+            <Link to="/search"><button className='btn btn-secondary changeGame'>Change Favorite Game</button></Link>
             </div>
+            
         </main>
         
     )

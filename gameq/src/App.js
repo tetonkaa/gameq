@@ -46,9 +46,6 @@ function App() {
     </div>
       <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>
       <h1>gameQ</h1>
-      { isLoggedIn ?
-      <h1>you're logged in</h1>
-      :null }
       <Routes>
         <Route path="/" element={<Home setIsLoggedIn={setIsLoggedIn} />}></Route>
         <Route path="/signup" element={<SignUp  setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}></Route>
