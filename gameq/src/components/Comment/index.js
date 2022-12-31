@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 import axios from 'axios'
 
-const Comment = () => {
+const Comment = ({setCommentKey}) => {
     
     const [formState, setFormState] = useState({
         rating: '',
@@ -24,6 +24,7 @@ const Comment = () => {
             }
           };
         const { data } = await axios.post('http://localhost:8000/comment', formState, config)
+        setCommentKey(Math.random())
     }
 
     async function getComments() {

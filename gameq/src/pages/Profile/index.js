@@ -6,7 +6,7 @@ import './gameCard.css'
 
  function Profile(props) {
     const [currentGame, setCurrentGame] = useState({})
-    
+    const [commentKey, setCommentKey] = useState(0)
 
     
     
@@ -15,16 +15,17 @@ import './gameCard.css'
         return data
     }
 
-    async function getTheGame() {
-        const game = await getGameInfo(props.user.favGameId)
-        console.log(game)
-        setCurrentGame(game)
-    }
+    
 
     useEffect(() => {
+        async function getTheGame() {
+            const game = await getGameInfo(props.user.favGameId)
+            console.log(game)
+            setCurrentGame(game)
+        }
+       
         getTheGame()
-        
-    })
+    }, [props.user.favGameId])
     
 
     return(
@@ -44,7 +45,7 @@ import './gameCard.css'
                 </div>
             </div>
             <Link to="/search"><button className='btn btn-secondary changeGame'>Change Favorite Game</button></Link>
-            <Comment />
+            <Comment key={commentKey} setCommentKey={setCommentKey} />
             </div>
             
         </main>
