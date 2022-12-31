@@ -2,8 +2,16 @@
     display: flex;
     justify-content: center;
     margin-top: 10vw;
+    
+}
+.card-title{
+    font-size: 2vw;
 }
 
+.card-text{
+    padding: 0;
+    font-size: 3.2vw;
+}
 .card {
     background-color: rgba(255, 255, 255, 0.5);
     margin-right: 1.5em;
