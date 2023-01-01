@@ -30,6 +30,7 @@ const GameCard = () => {
     
     
     return(
+        
         <main className="card-container">
             { currentGame.map((game, i) =>
             <div className="card" key={i} style={{width: "18rem"}}>

@@ -11,9 +11,12 @@ export default function Home(props) {
 
     // render JSX
     return (
+        <div>
+            <br />
         <main>
             <GameCard />
         </main>
+        </div>
         
     )
 }
