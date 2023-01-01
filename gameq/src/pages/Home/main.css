@@ -5,7 +5,13 @@
 
 .video-bg{
     width: 300px;
-    /* height: 500px; */
+    
+}
+.video-bg:hover{
+        box-shadow: 0 32px 24px 0 rgba(0,0,0,0.2);
+        transform: scale(2.5);
+        transition: .5s;
+      
 }
 
 /* this is for corasoul */
