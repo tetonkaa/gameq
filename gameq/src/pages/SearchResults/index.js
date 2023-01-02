@@ -32,17 +32,21 @@ const SearchResults = ({}) => {
 
     console.log(selectedGame)
     return (
-      <div className="games search">
-        <button onClick={() => setGame()}>Set Favorite Game</button>
-        <SearchForm searchedGames={searchedGames} setSearchedGames={setSearchedGames} />
+      <div className="ResultContainers">
+      <div className="setBtn">
+      <button  onClick={() => setGame()}>Set Favorite Game</button>
+      </div>
+      <div className="searchResult">
+        <SearchForm  searchedGames={searchedGames} setSearchedGames={setSearchedGames} />
           {searchedGames.map((games, i) => (
-          <div key={i} className="games card">
-            <img className="card-img-top" src={games.background_image} width="250" />
-            <p className="card-text">{games.name}</p>
-            <button onClick={() => setSelectedGame(games.slug)}>Add Game</button>
+          <div className="foundGames" key={i} >
+            <img className="gameImage" src={games.background_image} width="250" />
+            <p>{games.name}</p>
+            <button className="gameBtn" onClick={() => setSelectedGame(games.slug)}>Add Game</button>
           </div>
           ))}
       </div>
+     </div> 
     )
   }
   

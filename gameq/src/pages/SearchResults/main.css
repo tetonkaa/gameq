@@ -1,8 +1,36 @@
-.card{
-    
 
+
+.setBtn{
+    position: fixed;
+    top: 17vw;
+    left: 45vw;
+    }
+
+.searchResult{
+    
+    margin:auto;
+    width: 50%;
+    margin-top: 15%;
+    border: 3px solid rgb(17, 17, 17);
+    border-radius: 3px;
+    background-color: rgb(17, 17, 17);  
 }
 
-.games{
-    
+.foundGames{
+    border: 3px solid black;
+}
+
+
+  
+
+.gameImage{
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:20px;
+}
+
+.gameBtn{
+    width: 410px;
 }

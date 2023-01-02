@@ -1,5 +1,6 @@
-.container{
-  margin-top: 70px;
+.logIncontainer{
+  margin:auto;
+  margin-top: 10%;
     width: 350px;
     height: 200px;
     background-color: rgba(17, 17, 17, 1);
@@ -30,7 +31,7 @@ input{
 }
 
 
-.input-text{
+.logininput-text{
     margin: 10px;
     
 }

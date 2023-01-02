@@ -32,11 +32,11 @@ export default function Login ({setIsLoggedIn , isLoggedIn}) {
     }, [isLoggedIn])
     // redirect to home page if not logged in
     return (
-        <div className="container">
+        <div className="logIncontainer">
             <h2>Login</h2>
 
             <form onSubmit={submitHandler}>
-                <div className="input-text">
+                <div className="logininput-text">
                     <label htmlFor='username'>Username</label>
                     <input
                         type='text'
@@ -45,7 +45,7 @@ export default function Login ({setIsLoggedIn , isLoggedIn}) {
                         value={formState.username} />
                 </div>
 
-                <div className="input-text">
+                <div className="logininput-text">
                     <label htmlFor='password'>Password</label>
                     <input
                         type='password'
