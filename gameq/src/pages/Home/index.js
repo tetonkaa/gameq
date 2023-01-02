@@ -13,10 +13,7 @@ export default function Home(props) {
     return (
         <div className="video-gq">
             <header>
-               {/* <video className="video-bg" autoPlay muted loop>
-                <source src="../../assets/video/video.mp4" type="video/mp4"></source>
-                </video>  */}
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ 
 <div className="carosel" id="carosel1">
   <a className="carosel-control carosel-control-left glyphicon glyphicon-chevron-left" href="#"></a>
   <div className="carosel-inner">
