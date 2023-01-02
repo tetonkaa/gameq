@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchResults from '../../pages/SearchResults';
+import './search.css'
 
 
 
@@ -27,7 +28,7 @@ import SearchResults from '../../pages/SearchResults';
       }
       
     return (
-      <form onSubmit={handleSubmit} className="form-horizontal">
+      <form className="search" onSubmit={handleSubmit} className="form-horizontal">
         <input
           placeholder="Search"
           type="text"
@@ -36,7 +37,7 @@ import SearchResults from '../../pages/SearchResults';
           onChange={handleChange}
           value={searchString}
         />
-        <button type="submit">Search</button>
+        <button type="submit"><img src="https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_960_720.png"/></button>
       </form>
     );
   }

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useEffect} from 'react';
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
-import "../Login/main.css"
+import "./sign.css"
 
 export default function SignUp({setIsLoggedIn, isLoggedIn}) {
     // state declarations
@@ -18,7 +18,7 @@ export default function SignUp({setIsLoggedIn, isLoggedIn}) {
 
     async function submitHandler(event) {
         event.preventDefault()
-        const { data } = await axios.post('http://localhost:8000/user/signup', formState)
+        const { data } = await axios.post('http://localhost:8001/user/signup', formState)
         localStorage.token = data.token
         setIsLoggedIn(true)
     }
@@ -32,11 +32,11 @@ export default function SignUp({setIsLoggedIn, isLoggedIn}) {
     }, [isLoggedIn])
 
     return (
-        <div className="container">
-            <h2>Sign Up</h2>
+        <div className="containers">
+            <h2 className="heading">Sign Up</h2>
 
             <form onSubmit={submitHandler}>
-                <div className="input-text">
+                <div className="input-texts">
                     <label htmlFor='username'>Username</label>
                     <input
                         type='text'
@@ -45,7 +45,7 @@ export default function SignUp({setIsLoggedIn, isLoggedIn}) {
                         value={formState.username} />
                 </div>
 
-                <div className="input-text">
+                <div className="input-texts">
                     <label htmlFor='password'>Password</label>
                     <input
                         type='password'
@@ -54,15 +54,17 @@ export default function SignUp({setIsLoggedIn, isLoggedIn}) {
                         value={formState.password} />
                 </div>
 
-                <div className="input-text">
+                <div className="input-texts">
                     <label htmlFor='Bio'>Bio</label>
+                    <br />
                     <input
-                        type='textarea'
+                        type='text'
                         name='bio'
                         onChange={handleChange}
                         value={formState.bio} />
                 </div>
-                <div className="input-text">
+                
+                <div className="input-texts">
                     <label htmlFor='twitchLink'>Twitch Link</label>
                     <input
                         type='text'
@@ -71,7 +73,7 @@ export default function SignUp({setIsLoggedIn, isLoggedIn}) {
                         value={formState.twitchLink} />
                 </div>
 
-                <button type='submit' class="button" >Sign Up</button>
+                <button type='submit' class="buttons" >Sign Up</button>
             </form>
         </div>
     )

@@ -30,6 +30,7 @@ const GameCard = () => {
     
     
     return(
+        
         <main className="card-container">
             { currentGame.map((game, i) =>
             <div className="card" key={i} style={{width: "18rem"}}>
@@ -37,8 +38,7 @@ const GameCard = () => {
             <div className="card-body">
                 <h5 className="card-title">{game.name}</h5>
                 <p className="card-text">{game.rating}</p>
-                <a href="#" className="btn btn-primary">LIKE</a>
-            </div>
+                </div>
             </div>
             )}
         </main>

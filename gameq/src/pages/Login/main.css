@@ -1,18 +1,40 @@
 .container{
+  margin-top: 70px;
     width: 350px;
-    height: 300px;
-    background-color: aliceblue;
+    height: 200px;
+    background-color: rgba(17, 17, 17, 1);
+    display: flex;
+    flex-direction: row;
+    border-radius: 7px;
+    box-shadow: 5px 5px 5px;
+   
+
 }
+
+h2{
+  margin: 15px;
+  margin-top: 40px;
+  color: aliceblue;
+  font-family: dimitri_swankregular;
+}
+
+label{
+  color: aliceblue;
+}
+
+input{
+  background-color: rgb(103, 100, 100);
+  color: aliceblue;
+  font-weight: 400;
+  border-radius: 7px;
+}
+
 
 .input-text{
     margin: 10px;
+    
 }
 
-.button{
-    margin: 15px;
-    background-color: blueviolet;
-    color: white;
-}
   
 /* Animation property */
 .button {
@@ -47,10 +69,15 @@
 
   
   .button {
-    position: relative;
     left: calc(50% - 3em);
     top: calc(50% - 2em);
     border-radius: 2em;
+    margin-top: 20px;
+    background-color: blueviolet;
+    color: white;
+    width: 7em;
+
+    
     
     
   }  

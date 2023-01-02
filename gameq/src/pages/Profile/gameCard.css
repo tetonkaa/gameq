@@ -2,11 +2,18 @@
     display: flex;
     justify-content: center;
     margin-top: 10vw;
+    
+}
+.card-title{
+    font-size: 2vw;
 }
 
+.card-text{
+    padding: 0;
+    font-size: 3.2vw;
+}
 .card {
     background-color: rgba(255, 255, 255, 0.5);
-    margin-right: 1.5em;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     
 }
@@ -22,16 +29,57 @@ img {
     width: 400px;
 }
 
-.changeGame {
-    background-color: green;
-    
-}
+
 
 .comment{
     color: white;
-    background-color: black;
-    width: 18rem;
-    border-radius: 10px;
+    background-color: purple;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    border-collapse: separate;
+    border-radius: 10%;
+    
+}
+
+.content-under{
+    display: flex;
+    margin: auto;
+    margin-top: 8em;
+    width: 90%;
+    flex-direction: column;
+    background-color: darkmagenta;
+    border-radius: 20px;
+}
+
+.input-text {
+    margin: auto;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+p.comment-rating, p.comment-title, p.comment-content {
     padding: 0;
+}
+
+.comment-title {
+    background-color: darkgreen;
+}
+
+.comment-rating {
+    background-color: red;
+}
+
+.changeGame {
+    background-color: green;
+    width: 15rem;
+    margin-bottom: 1em;
+}
+
+.comment-submit {
+    
+    width: 15rem;
+    margin: auto;
+    margin-bottom: 3em;
 }
 

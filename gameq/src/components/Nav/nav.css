@@ -11,6 +11,7 @@
     overflow-x: hidden; 
     padding-top: 40px; 
     transition: 0.5s; 
+    
     }
     
     
@@ -21,6 +22,7 @@
     color: #fdfdfd;
     display: block;
     transition: 0.3s;
+    
     }
     
    
@@ -47,6 +49,7 @@
     padding: 10px 15px 10px 15px;
     border: none;
     font-family: dimitri_swankregular;
+    box-shadow: 4px 4px 4px rgb(0, 0, 0);
     }
     
     .openbtn:hover {

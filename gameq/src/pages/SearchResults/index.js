@@ -3,6 +3,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Navigate } from "react-router-dom";
 import SearchForm from '../../components/SearchForm';
+import './main.css'
 
 
 
@@ -31,13 +32,13 @@ const SearchResults = ({}) => {
 
     console.log(selectedGame)
     return (
-      <div className="games">
+      <div className="games search">
         <button onClick={() => setGame()}>Set Favorite Game</button>
-        <SearchForm  searchedGames={searchedGames} setSearchedGames={setSearchedGames} />
+        <SearchForm searchedGames={searchedGames} setSearchedGames={setSearchedGames} />
           {searchedGames.map((games, i) => (
-          <div key={i} className="games">
-            <img src={games.background_image} width="250" />
-            <p>{games.name}</p>
+          <div key={i} className="games card">
+            <img className="card-img-top" src={games.background_image} width="250" />
+            <p className="card-text">{games.name}</p>
             <button onClick={() => setSelectedGame(games.slug)}>Add Game</button>
           </div>
           ))}

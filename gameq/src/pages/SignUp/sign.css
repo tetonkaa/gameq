@@ -1,0 +1,86 @@
+.containers{
+  margin: 0 auto;
+  margin-top: 70px;
+    width: 350px;
+    height: 350px;
+    background-color: rgba(17, 17, 17, 1);
+    display: flex;
+    flex-direction: row;
+    box-shadow: 5px 5px 5px;
+    border-radius: 7px;
+
+   
+
+}
+
+.heading{
+    margin: 15px;
+    margin-top: 40px;
+    color: aliceblue;
+    font-family: dimitri_swankregular;
+}
+
+label{
+  color: aliceblue;
+}
+
+input{
+  background-color: rgb(103, 100, 100);
+  color: aliceblue;
+  font-weight: 400;
+
+}
+
+
+.input-texts{
+    margin: 10px;
+    
+}
+
+  
+/* Animation property */
+.buttons {
+    animation: wiggle 2s linear infinite;
+  }
+  
+  /* Keyframes */
+  @keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+  
+
+  
+   
+  .buttons {
+    left: calc(50% - 3em);
+    top: calc(50% - 2em);
+    border-radius: 2em;
+    margin-top: 20px;
+    background-color: blueviolet;
+    color: white;
+    width: 7em;
+
+    
+    
+    
+  }  
