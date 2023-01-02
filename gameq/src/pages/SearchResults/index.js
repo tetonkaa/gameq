@@ -41,13 +41,13 @@ const SearchResults = ({}) => {
       <div className="ResultContainers">
       <div className="setBtn">
       <button  onClick={() => setGame()}>Set Favorite Game</button>
-      </div>    
+      </div>   
       
       <div className="searchResult">
         <SearchForm  searchedGames={searchedGames} setSearchedGames={setSearchedGames} />
           {searchedGames.map((games, i) => (
             <div className="foundGames" key={i} >
-            <button className="gameBtn" onClick={() => setGame(games.slug)}>Select this title</button>
+            <button className="gameBtn" onClick={() => setSelectedGame(games.slug)}>Select this title</button>
             <img className="gameImage" src={games.background_image} width="250" />
             <p>{games.name}</p>
           </div>
