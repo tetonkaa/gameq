@@ -25,7 +25,7 @@ function App() {
         'Authorization': localStorage.getItem('token')
       }
     };
-    const userData = await axios.get("http://localhost:8000/user", config)
+    const userData = await axios.get("user", config)
     setUser(userData.data)
   }
 

@@ -23,7 +23,7 @@ const Comment = ({setCommentKey}) => {
               'Authorization': localStorage.getItem('token')
             }
           };
-        const { data } = await axios.post('http://localhost:8000/comment', formState, config)
+        const { data } = await axios.post('comment', formState, config)
         setCommentKey(Math.random())
     }
 
@@ -33,7 +33,7 @@ const Comment = ({setCommentKey}) => {
               'Authorization': localStorage.getItem('token')
             }
           };
-        const { data } = await axios.get('http://localhost:8000/comment', config)
+        const { data } = await axios.get('comment', config)
         return data
     }
 

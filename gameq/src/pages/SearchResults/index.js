@@ -27,7 +27,7 @@ const SearchResults = ({}) => {
         }
       };
       const gameId = { favGameId: selectedGame }
-      await axios.put("http://localhost:8000/user", gameId, config)
+      await axios.put("user", gameId, config)
       setToProfile(true);
     }
      

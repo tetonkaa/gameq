@@ -17,7 +17,7 @@ import './gameCard.css'
                 'Authorization': localStorage.getItem('token')
             }
         };
-        await axios.delete('http://localhost:8000/user', config)
+        await axios.delete('user', config)
         localStorage.clear()
         props.setIsLoggedIn (false)
 
