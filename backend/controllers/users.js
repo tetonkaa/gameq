@@ -50,6 +50,15 @@ router.get('/', async (req, res) => {
   res.json(foundUser)
 })
 
+router.delete('/', async (req, res) => {
+  const token = req.headers.authorization
+  const decode = jwt.decode(token, config.jwtSecret)
+  const foundUser = await db.User.findByIdAndDelete(decode.id)
+  res.json(foundUser)
+})
+
+
+
 
 // set user's favorite game
 router.put('/', async (req, res) => {  

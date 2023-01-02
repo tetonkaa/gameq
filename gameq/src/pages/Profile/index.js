@@ -8,6 +8,15 @@ import './gameCard.css'
     const [currentGame, setCurrentGame] = useState({})
     const [commentKey, setCommentKey] = useState(0)
 
+    async function deleteUser() {
+        const config = {
+            headers:{
+              'Authorization': localStorage.getItem('token')
+            }
+          };
+        await axios.delete('http://localhost:8000/user', config)
+    }
+
     
     async function getGameInfo(gameId) {
         const { data } = await axios.get(`https://api.rawg.io/api/games/${gameId}?key=aa63c7887e7a4a0e804fe2a27c004822`)
