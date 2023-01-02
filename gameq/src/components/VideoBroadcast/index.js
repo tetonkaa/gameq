@@ -1,13 +1,12 @@
+import "./main.css"
 
 
-
-function VideoBroadcast{
+function VideoBroadcast(){
     return(
  <div className="video-gq">
  <header>
-
+     {/* <h1 className="game-title">GameQ</h1> */}
 <div className="carosel" id="carosel1">
-<a className="carosel-control carosel-control-left glyphicon glyphicon-chevron-left" href="#"></a>
 <div className="carosel-inner">
 <video className="video-bg" autoPlay muted loop>
      <source src="../../assets/video/video.mp4" type="video/mp4"></source>
@@ -28,10 +27,9 @@ function VideoBroadcast{
      <source src="../../assets/video/video6.mp4" type="video/mp4"></source>
      </video>
 </div>
-<a class="carosel-control carosel-control-right glyphicon glyphicon-chevron-right" href="#"></a>
+
 </div>
 <div className="carosel" id="carosel2">
-<a className="carosel-control carosel-control-left glyphicon glyphicon-chevron-left" href="#"></a>
 <div className="carosel-inner">
      <video className="video-bg" autoPlay muted loop>
      <source src="../../assets/video/videoset.mp4" type="video/mp4"></source>
@@ -52,7 +50,6 @@ function VideoBroadcast{
      <source src="../../assets/video/videoset3.mp4" type="video/mp4"></source>
      </video>
 </div>
-<a class="carosel-control carosel-control-right glyphicon glyphicon-chevron-right" href="#"></a>
 </div>
  </header>
  </div> 

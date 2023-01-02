@@ -1,0 +1,93 @@
+.loginbtn {
+    /* display: flexbox; */
+    margin-left: 80%;
+}
+
+
+
+.video-bg{
+    width: 300px;
+    
+}
+
+
+/* this is for corasoul */
+@media (max-width: 300px) {
+    .carosel-item {
+      width: 100%;
+    }
+  }
+  @media (min-width: 300px) {
+    .carosel-item {
+      width: 50%;
+    }
+  }
+  @media (min-width: 500px) {
+    .carosel-item {
+      width: 33.333%;
+    }
+  }
+  @media (min-width: 768px) {
+    .carosel-item {
+      width: 25%;
+    }
+  }
+  .carosel {
+    position: relative;
+    /* background-color: #000; */
+    margin-left: 60px;
+    
+    
+  }
+  
+  .carosel-inner {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0;
+  }
+  .carosel-item {
+    display: inline-block;
+  }
+  .carosel-control {
+    position: absolute;
+    top: 50%;
+    padding: 15px;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 30px;
+    display: inline-block;
+  }
+  .carosel-control-left {
+    left: 15px;
+  }
+  .carosel-control-right {
+    right: 15px;
+  }
+  .carosel-control:active,
+  .carosel-control:hover {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .carosel{
+    z-index: -1;
+    margin-top: 0;
+    position: relative;
+    filter: blur(1px);
+}
+/* 
+.game-title{
+  font-family: dimitri_swankregular;
+  font-size: 75px;
+  text-align: center;
+  color:rgb(231, 25, 25);
+  position: absolute;
+  margin-left: 850px;
+  margin-top: 130px;
+  
+  
+
+  
+} */
