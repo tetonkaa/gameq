@@ -10,12 +10,14 @@ import SearchForm from "./components/SearchForm";
 import SearchResults from "./pages/SearchResults";
 import axios from "axios";
 import Profile from './pages/Profile'
+import VideoBroadcast from "./components/VideoBroadcast";
 
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   const [newComment, setNewComment] = useState(true)
+  
 
   async function getUser(){
     const config = {
@@ -46,9 +48,9 @@ function App() {
     
     </div>
       <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>
-      <h1>gameQ</h1>
+      <h1 className="gameq-title">gameQ</h1>
       <Routes>
-        <Route path="/" element={<Home setIsLoggedIn={setIsLoggedIn} />}></Route>
+        <Route path="/" element={<Home  setIsLoggedIn={setIsLoggedIn} />}></Route>
         <Route path="/signup" element={<SignUp  setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}></Route>
         <Route path="/login" element={<Login  setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}></Route>
         <Route path='/profile' element={<Profile setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} user={user} setNewComment={setNewComment} newComment={newComment} />}></Route>
