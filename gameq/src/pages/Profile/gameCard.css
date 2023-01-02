@@ -1,6 +1,11 @@
-.bioContainer{
+.profilePage{
     margin:auto;
     width:100%;
+    background-color: rgb(17, 17 ,17 , 1);
+    color:white;
+    max-width: 95vw;
+    border-radius: 10px;
+    box-shadow: 6px 10px 17px 10px #333333;
 }
 .card-container {
     display: flex;
@@ -8,13 +13,28 @@
     margin-top: 10vw;
     
 }
+.userBio{
+    box-shadow: inset .2em .2em  red;
+    max-width: 50%;
+    margin:auto;
+    text-align:left;
+    font-size: 1.7vw;
+    padding: 1.2vw;
+}
+.userName{
+    padding-top: 2%;
+    text-align: center;
+}
+.userBio{
+    background-color: #333333;
+}
 .card-title{
     font-size: 2vw;
 }
 
 .card-text{
     padding: 0;
-    font-size: 3.2vw;
+    font-size: 2.2vw;
 }
 .card {
     background-color: rgba(255, 255, 255, 0.5);
@@ -37,13 +57,7 @@ img {
     text-align: center;
 }
 
-.bioContainer{
-    background-color: rgb(17, 17 ,17 , 1);
-    color:white;
-    max-width: 95vw;
-    border-radius: 10px;
-    box-shadow: 100px;
-}
+
 
 
 .comment{
@@ -63,7 +77,8 @@ img {
     margin-top: 8em;
     width: 90%;
     flex-direction: column;
-    background-color: darkmagenta;
+    background-color: #333333;
+    
     border-radius: 20px;
 }
 
@@ -99,3 +114,12 @@ p.comment-rating, p.comment-title, p.comment-content {
     margin-bottom: 3em;
 }
 
+.deleteBtn{
+    background-color: red;
+    border: 0px;
+    border-radius: 5%;
+    width:10rem;
+    margin-top: 1%;
+    margin-left: 46%;
+    margin-bottom: .5%;
+}

@@ -37,7 +37,7 @@ const GameCard = () => {
             <img className="card-img-top" src={game.background_image} alt="Card image cap" />
             <div className="card-body">
                 <h5 className="card-title">{game.name}</h5>
-                <p className="card-text">{game.rating}</p>
+                <p className="card-text rating">Rating:{game.rating}</p>
                 </div>
             </div>
             )}

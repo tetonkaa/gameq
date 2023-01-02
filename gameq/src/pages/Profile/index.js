@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 import Comment from '../../components/Comment'
 import './gameCard.css'
@@ -7,14 +8,19 @@ import './gameCard.css'
  function Profile(props) {
     const [currentGame, setCurrentGame] = useState({})
     const [commentKey, setCommentKey] = useState(0)
+    
 
     async function deleteUser() {
+        
         const config = {
             headers:{
-              'Authorization': localStorage.getItem('token')
+                'Authorization': localStorage.getItem('token')
             }
-          };
+        };
         await axios.delete('http://localhost:8000/user', config)
+        localStorage.clear()
+        props.setIsLoggedIn (false)
+
     }
 
     
@@ -38,20 +44,22 @@ import './gameCard.css'
 
     return(
         <main className="profileContainer">
-            <div className="bioContainer">
-            <h2>{props.user.username}</h2>
+            <div className="profilePage">
+            <h2 className="userName">{props.user.username}</h2>
+            <div className="userBio">
             Bio:<br/>
             <br />
             {props.user.bio}
-            {props.user.twitchLink}
-            
+            <br />
+            <a href={props.user.twitchLink}>{props.user.twitchLink}</a>
+            </div>
             <h2 className="favGame">Favorite Game</h2>
             <div className='card-container'>
                 <div className="card" style={{width: "18rem"}}>
                 <img className="card-img-top" src={currentGame.background_image} alt="Card image cap" />
                 <h5 className="card-title">{currentGame.name}</h5>
-                <p className="card-text">{currentGame.rating}</p>
-                <Link to="/search"><button className='btn btn-secondary changeGame'>Change Favorite Game</button></Link>
+                <p className="card-text rating">{currentGame.rating}</p>
+                <Link to="/search"><button className='btn btn-danger changeGame'>Change Favorite Game</button></Link>
             </div>
             </div>
             
@@ -60,8 +68,8 @@ import './gameCard.css'
                 <br />
                 <Comment key={commentKey} setCommentKey={setCommentKey} />
             </div>
+            <button className="deleteBtn" onClick={()=> deleteUser()}> Delete Account</button>
             </div>
-            
             
             
         </main>
