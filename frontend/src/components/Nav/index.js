@@ -40,7 +40,7 @@ function Nav(props) {
             <Link to='/signup' >Sign Up</Link>
             <Link to='/login' >Log In</Link>
             </>
-            : <p onClick={() => logout()}>Log out</p>
+            : <p className="logOut" onClick={() => logout()}>Log out</p>
             }
             </div>
 
