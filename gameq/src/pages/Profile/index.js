@@ -28,13 +28,15 @@ import './gameCard.css'
     
 
     return(
-        <main>
-            <h1>{props.user.username}</h1>
+        <main className="profileContainer">
+            <div className="bioContainer">
+            <h2>{props.user.username}</h2>
+            Bio:<br/>
             <br />
-            <h1>{props.user.bio}</h1>
-            <br />
-            <h1>{props.user.twitchLink}</h1>
-            <h1>Favorite Game</h1>
+            {props.user.bio}
+            {props.user.twitchLink}
+            
+            <h2 className="favGame">Favorite Game</h2>
             <div className='card-container'>
                 <div className="card" style={{width: "18rem"}}>
                 <img className="card-img-top" src={currentGame.background_image} alt="Card image cap" />
@@ -48,6 +50,7 @@ import './gameCard.css'
                 
                 <br />
                 <Comment key={commentKey} setCommentKey={setCommentKey} />
+            </div>
             </div>
             
             

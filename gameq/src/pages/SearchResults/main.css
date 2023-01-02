@@ -2,10 +2,16 @@
 
 .setBtn{
     position: fixed;
-    top: 17vw;
+    top: 45vw;
     left: 45vw;
+    background-color: red;
+    max-height: 2vw;
     }
 
+.likeBtnimg{
+    max-height: 25px;
+    max-width: 25px;
+}
 .searchResult{
     
     margin:auto;
@@ -18,6 +24,10 @@
 
 .foundGames{
     border: 3px solid black;
+}
+
+.foundGames, p {
+    text-align: center;
 }
 
 
