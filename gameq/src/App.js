@@ -17,6 +17,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   const [newComment, setNewComment] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   async function getUser(){
     const config = {

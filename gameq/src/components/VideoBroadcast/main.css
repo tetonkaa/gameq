@@ -7,22 +7,28 @@
 
 .video-bg{
     width: 300px;
-    
+  
 }
 
 
 /* this is for corasoul */
-@media (max-width: 300px) {
+@media (max-width: 500px) {
     .carosel-item {
       width: 100%;
+  
     }
-  }
-  @media (min-width: 300px) {
-    .carosel-item {
-      width: 50%;
+    .video-bg{
+      width: 15%;
+      margin-left: 0;
     }
   }
   @media (min-width: 500px) {
+    .carosel-item {
+      width: 50%;
+    }
+    
+  }
+  @media (min-width: 550px) {
     .carosel-item {
       width: 33.333%;
     }
@@ -73,21 +79,8 @@
 
   .carosel{
     z-index: -1;
-    margin-top: 0;
+    margin-top: -0px;
     position: relative;
     filter: blur(1px);
+    
 }
-/* 
-.game-title{
-  font-family: dimitri_swankregular;
-  font-size: 75px;
-  text-align: center;
-  color:rgb(231, 25, 25);
-  position: absolute;
-  margin-left: 850px;
-  margin-top: 130px;
-  
-  
-
-  
-} */
