@@ -6,15 +6,8 @@ import './gameCard.css'
 
  function Profile(props) {
     const [currentGame, setCurrentGame] = useState({})
-    
+    const [commentKey, setCommentKey] = useState(0)
 
-    
-    async function getTheGame() {
-        
-        const game = await getGameInfo(props.user.favGameId)
-        console.log(game)
-        setCurrentGame(game)
-    }
     
     async function getGameInfo(gameId) {
         const { data } = await axios.get(`https://api.rawg.io/api/games/${gameId}?key=aa63c7887e7a4a0e804fe2a27c004822`)
@@ -23,9 +16,15 @@ import './gameCard.css'
 
 
     useEffect(() => {
+        async function getTheGame() {
+            const game = await getGameInfo(props.user.favGameId)
+            console.log(game)
+            setCurrentGame(game)
+        }
+       
         getTheGame()
         
-    },[])
+    },[props.user.favGameId])
     
 
     return(
@@ -41,11 +40,16 @@ import './gameCard.css'
                 <img className="card-img-top" src={currentGame.background_image} alt="Card image cap" />
                 <h5 className="card-title">{currentGame.name}</h5>
                 <p className="card-text">{currentGame.rating}</p>
+                <Link to="/search"><button className='btn btn-secondary changeGame'>Change Favorite Game</button></Link>
+            </div>
+            </div>
+            
+            <div className='content-under'>
                 
+                <br />
+                <Comment key={commentKey} setCommentKey={setCommentKey} />
             </div>
-            </div>
-            <Link to="/search"><button className='btn btn-secondary changeGame'>Change Favorite Game</button></Link>
-            <Comment />
+            
             
             
         </main>

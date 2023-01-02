@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 import axios from 'axios'
 
-const Comment = () => {
+const Comment = ({setCommentKey}) => {
     
     const [formState, setFormState] = useState({
         rating: '',
@@ -24,6 +24,7 @@ const Comment = () => {
             }
           };
         const { data } = await axios.post('http://localhost:8000/comment', formState, config)
+        setCommentKey(Math.random())
     }
 
     async function getComments() {
@@ -47,7 +48,8 @@ const Comment = () => {
 
     return(
         <main>
-            <form onSubmit={submitHandler}>
+            <h1>Comments</h1>
+            <form onSubmit={submitHandler} className='content-under'>
                 <div className="input-text">
                     <label htmlFor="rating"></label>
                     <input
@@ -75,14 +77,14 @@ const Comment = () => {
                         placeholder="Content"
                         value={formState.content} />
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" className='btn btn-secondary comment-submit'>Submit</button>
             </form>
             <section>
             { comments.map((comment, i) =>
                     <div key={i} className="comment">
-                        <p>{comment.title}</p>
-                        <p>{comment.content}</p>
-                        <p>{comment.rating}/10</p>
+                        <p className='comment-title'>{comment.title}</p>
+                        <p className='comment-content'>{comment.content}</p>
+                        <p className='comment-rating'>{comment.rating}/10</p>
                     </div>
             )}
             </section>
