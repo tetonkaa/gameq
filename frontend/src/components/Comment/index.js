@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-
+import './main.css'
 import axios from 'axios'
 
 const Comment = ({setCommentKey}) => {
@@ -48,7 +48,7 @@ const Comment = ({setCommentKey}) => {
 
     return(
         <main>
-            <h1>Comments</h1>
+            <h1 className="commentsHeader">Comments</h1>
             <form onSubmit={submitHandler} className='content-under'>
                 <div className="input-text">
                     <label htmlFor="rating"></label>

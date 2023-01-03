@@ -112,6 +112,7 @@ p.comment-rating, p.comment-title, p.comment-content {
     width: 15rem;
     margin: auto;
     margin-bottom: 3em;
+    background-color: green;
 }
 
 .someRedBtn{
