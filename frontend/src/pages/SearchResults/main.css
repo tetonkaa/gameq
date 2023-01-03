@@ -43,4 +43,7 @@
 
 .gameBtn{
     width: 410px;
+    position: fixed;
+    top: 45vw;
+    left: 45vw;
 }
