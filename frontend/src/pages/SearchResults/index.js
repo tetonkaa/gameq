@@ -6,7 +6,10 @@ import SearchForm from '../../components/SearchForm';
 import './main.css'
 
 
-
+function borderChange() {
+  document.getElementById("gameSelector").style.borderColor = "red";
+  
+  }
 
 const SearchResults = ({}) => {
 
@@ -47,7 +50,7 @@ const SearchResults = ({}) => {
         <SearchForm  searchedGames={searchedGames} setSearchedGames={setSearchedGames} />
           {searchedGames.map((games, i) => (
             <div className="foundGames" key={i} >
-            <button className="gameBtn" onClick={() => setSelectedGame(games.slug)}>Select this title</button>
+            <button className="gameBtn" id="gameSelector" onClick={() => {setSelectedGame(games.slug); borderChange();}}>Select this title</button>
             <img className="gameImage" src={games.background_image} width="250" />
             <p>{games.name}</p>
           </div>
