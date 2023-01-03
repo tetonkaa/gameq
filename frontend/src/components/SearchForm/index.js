@@ -37,7 +37,7 @@ import './search.css'
           onChange={handleChange}
           value={searchString}
         />
-        <button type="submit"><img class="glass" src="https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_960_720.png"/></button>
+        <button className="glassBtn" type="submit"><img class="glass" src="https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_960_720.png"/></button>
       </form>
     );
   }
