@@ -40,7 +40,7 @@ const SearchResults = ({}) => {
       </div>
       <div className="ResultContainers">
       <div className="setBtn">
-      <button  onClick={() => setGame()}>Set Favorite Game</button>
+      <button className="someRedBtn" onClick={() => setGame()}>Set Favorite Game</button>
       </div>   
       
       <div className="searchResult">

@@ -78,7 +78,6 @@ img {
     width: 90%;
     flex-direction: column;
     background-color: #333333;
-    box-shadow: inset 0 0 10px #1f1f1f;
     border-radius: 12px;
 }
 
@@ -115,7 +114,7 @@ p.comment-rating, p.comment-title, p.comment-content {
     margin-bottom: 3em;
 }
 
-.deleteBtn{
+.someRedBtn{
     background-color: red;
     border: 0px;
     border-radius: 5%;

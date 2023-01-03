@@ -68,7 +68,7 @@ import './gameCard.css'
                 <br />
                 <Comment key={commentKey} setCommentKey={setCommentKey} />
             </div>
-            <button className="deleteBtn" onClick={()=> deleteUser()}> Delete Account</button>
+            <button className="someRedBtn" onClick={()=> deleteUser()}> Delete Account</button>
             </div>
             
             
