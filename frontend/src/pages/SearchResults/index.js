@@ -41,6 +41,7 @@ const SearchResults = ({}) => {
       <div>
         <p className="searchTitle">Choose your favorite game from a Catalogue of over 500,000 titles!</p>
       </div>
+      <h2>Selected Game: {selectedGame}</h2>
       <div className="ResultContainers">
       
       <button className="someRedBtn setBtn" onClick={() => setGame()}>Set Favorite Game</button>
