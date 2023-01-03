@@ -14,7 +14,7 @@
     
 }
 .userBio{
-    box-shadow: inset .2em .2em  red;
+    box-shadow: 1px 2px 50px 3px #000 inset;    
     max-width: 50%;
     margin:auto;
     text-align:left;
