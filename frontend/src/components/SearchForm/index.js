@@ -24,7 +24,7 @@ import './search.css'
       async function getGames() {
         const {data} = await axios.get(`https://api.rawg.io/api/games?search=${searchString}&search_precise=true&key=aa63c7887e7a4a0e804fe2a27c004822`)
        props.setSearchedGames(data.results)
-       console.log('trying to search')
+       
       }
       
     return (

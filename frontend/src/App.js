@@ -33,7 +33,7 @@ function App() {
   useEffect(() => {
     if (localStorage.token) {
         getUser()
-        console.log('getUser has been run')
+        
         setIsLoggedIn(true)
     }
   }, [localStorage.token])

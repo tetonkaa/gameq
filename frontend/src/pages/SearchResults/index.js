@@ -20,7 +20,7 @@ const SearchResults = ({}) => {
     
     async function setGame(games) {
       setSelectedGame(games)
-      console.log(selectedGame)
+      
       const config = {
         headers:{
           'Authorization': localStorage.getItem('token')
@@ -32,7 +32,7 @@ const SearchResults = ({}) => {
     }
      
 
-    console.log(selectedGame)
+    
     return (
       <>
       <div>
