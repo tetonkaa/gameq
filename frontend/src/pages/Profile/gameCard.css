@@ -62,7 +62,7 @@ img {
 
 .comment{
     color: white;
-    background-color: purple;
+    background-color: rgb(17, 17 ,17 , 1);
     width: 50%;
     margin: auto;
     text-align: center;
@@ -92,7 +92,7 @@ p.comment-rating, p.comment-title, p.comment-content {
 }
 
 .comment-title {
-    background-color: darkgreen;
+    background-color: rgb(53, 53, 53);
 }
 
 .comment-rating {
