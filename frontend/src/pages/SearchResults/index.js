@@ -39,9 +39,9 @@ const SearchResults = ({}) => {
         <p>Choose your favorite game from a Catalogue of over 500,000 titles!</p>
       </div>
       <div className="ResultContainers">
-      <div className="setBtn">
+      
       <button className="someRedBtn" onClick={() => setGame()}>Set Favorite Game</button>
-      </div>   
+        
       
       <div className="searchResult">
         <SearchForm  searchedGames={searchedGames} setSearchedGames={setSearchedGames} />
