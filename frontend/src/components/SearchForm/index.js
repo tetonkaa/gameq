@@ -28,8 +28,8 @@ import './search.css'
       }
       
     return (
-      <form className="search" onSubmit={handleSubmit} className="form-horizontal">
-        <input
+      <form className="search" onSubmit={handleSubmit}>
+        <input className="search"
           placeholder="Search"
           type="text"
           name="searchString"
