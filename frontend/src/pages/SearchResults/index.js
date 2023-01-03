@@ -43,7 +43,7 @@ const SearchResults = ({}) => {
       <button className="someRedBtn" onClick={() => setGame()}>Set Favorite Game</button>
         
       
-      <div className="searchResult">
+      <div className="searchResult setBtn">
         <SearchForm  searchedGames={searchedGames} setSearchedGames={setSearchedGames} />
           {searchedGames.map((games, i) => (
             <div className="foundGames" key={i} >
