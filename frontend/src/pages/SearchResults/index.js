@@ -36,7 +36,7 @@ const SearchResults = ({}) => {
     return (
       <>
       <div>
-        <p>Choose your favorite game from a Catalogue of over 500,000 titles!</p>
+        <p className="searchTitle">Choose your favorite game from a Catalogue of over 500,000 titles!</p>
       </div>
       <div className="ResultContainers">
       

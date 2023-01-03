@@ -25,11 +25,13 @@
     border: 3px solid black;
 }
 
-.foundGames p {
+.foundGames {
     text-align: center;
 }
 
-
+.searchTitle {
+    text-align: center;
+}
   
 
 .gameImage{
@@ -42,4 +44,5 @@
 
 .gameBtn{
     width: 410px;
+    margin:auto;
 }
