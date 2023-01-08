@@ -14,7 +14,7 @@ Javascript
 React.js Node.js CSS Bootstrap  JWT Passport Express MongoDB Mongoose HTML </p>
 
 <h2>Try it yourself!</h2>
-https://gameq.herokuapp.com/search
+https://gameq.herokuapp.com/
 
 ![image](https://user-images.githubusercontent.com/100241450/210465284-459daadf-fed3-47f9-b613-c566fce638cc.png)
 
