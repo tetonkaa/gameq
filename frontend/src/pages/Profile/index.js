@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
-import { Navigate } from "react-router-dom";
 import axios from 'axios'
 import Comment from '../../components/Comment'
 import './gameCard.css'
@@ -11,6 +10,13 @@ import './gameCard.css'
     const [commentKey, setCommentKey] = useState(0)
   
     
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (!props.isLoggedIn) {
+            navigate('/')
+        }
+    }, [props.isLoggedIn])
 
  
     async function deleteUser() {
