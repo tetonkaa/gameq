@@ -8,21 +8,27 @@ import './gameCard.css'
  function Profile(props) {
     const [currentGame, setCurrentGame] = useState({})
     const [commentKey, setCommentKey] = useState(0)
+    const [toProfile, setToProfile] = useState('false')
     
 
-    async function deleteUser() {
+    if (toProfile === true) {
+        return <Navigate to="/"></Navigate>
         
+    }
+    async function deleteUser() {
         const config = {
             headers:{
                 'Authorization': localStorage.getItem('token')
             }
         };
         await axios.delete('user', config)
-        localStorage.clear()
-        props.setIsLoggedIn (false)
-
-    }
-
+        
+      setToProfile(true)
+      localStorage.clear()
+      props.setIsLoggedIn (false)
+      
+    
+}
     
     async function getGameInfo(gameId) {
         const { data } = await axios.get(`https://api.rawg.io/api/games/${gameId}?key=aa63c7887e7a4a0e804fe2a27c004822`)
