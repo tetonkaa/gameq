@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 import SearchForm from '../../components/SearchForm';
 import './main.css'
 
@@ -10,15 +11,18 @@ function borderChange() {
   document.getElementById("gameSelector").style.borderColor = "red";
   
   }
+ 
+  
 
 const SearchResults = ({}) => {
 
     const [searchedGames, setSearchedGames] = useState([]);
     const [selectedGame, setSelectedGame] = useState("");
     const [toProfile, setToProfile] = useState('false')
+    const navigate = useNavigate()  
 
     if (toProfile === true) {
-      return <Navigate to="/profile"></Navigate>
+      navigate("/profile")
     }
     
     async function setGame(games) {
