@@ -1,6 +1,7 @@
 import { Routes, Route, Link, Navigate } from 'react-router-dom'
 import {useState} from 'react'
 import { useNavigate } from "react-router-dom"
+import { useEffect} from 'react';
 
 import './nav.css'
 
@@ -28,7 +29,7 @@ function openNav() {
       const navigate = useNavigate()  
     
       useEffect(() => {
-        if (props.isLoggedIn) {
+        if (!props.isLoggedIn) {
             navigate('/')
         }
     
