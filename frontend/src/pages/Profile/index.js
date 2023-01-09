@@ -9,13 +9,10 @@ import './gameCard.css'
  function Profile(props) {
     const [currentGame, setCurrentGame] = useState({})
     const [commentKey, setCommentKey] = useState(0)
-    const [toProfile, setToProfile] = useState('false')
+  
     
 
-    if (toProfile === true) {
-        return <Navigate to="/"></Navigate>
-        
-    }
+ 
     async function deleteUser() {
         const config = {
             headers:{
@@ -24,7 +21,7 @@ import './gameCard.css'
         };
         await axios.delete('user', config)
         
-      setToProfile(true)
+      
       localStorage.clear()
       props.setIsLoggedIn (false)
       
