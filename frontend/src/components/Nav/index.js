@@ -1,5 +1,6 @@
 import { Routes, Route, Link, Navigate } from 'react-router-dom'
 import {useState} from 'react'
+import { useNavigate } from "react-router-dom"
 
 import './nav.css'
 
@@ -13,20 +14,26 @@ function openNav() {
     document.getElementById("mySidebar").style.width = "0";
   
   } 
-function Nav(props) {
-  const [toHome, setToHome] = useState('false')
-
-    if (toHome === true) {
-      return <Navigate to="/"></Navigate>
-    }
-
-    function logout() {
-        localStorage.clear()
-        props.setIsLoggedIn(false)
-        props.setUser({})
-        setToHome(true)
-    }
   
+  function Nav(props) {
+        
+    function logout() {
+      localStorage.clear()
+      props.setIsLoggedIn(false)
+      props.setUser({})
+     
+    }
+    
+    
+      const navigate = useNavigate()  
+    
+      useEffect(() => {
+        if (props.isLoggedIn) {
+            navigate('/')
+        }
+    
+    }, [props.isLoggedIn])
+    
   return(
             <nav>
             <div id="mySidebar" className="sidebar">
