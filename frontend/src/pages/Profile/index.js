@@ -9,7 +9,7 @@ import './gameCard.css'
  function Profile(props) {
     const [currentGame, setCurrentGame] = useState({})
     const [commentKey, setCommentKey] = useState(0)
-    const [toProfile, setToProfile] = useState(false)
+    const [toProfile, setToProfile] = useState('false')
     
 
     if (toProfile === true) {
