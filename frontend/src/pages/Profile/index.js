@@ -43,13 +43,13 @@ import './gameCard.css'
     useEffect(() => {
         async function getTheGame() {
             const game = await getGameInfo(props.user.favGameId)
-            
+            console.log(game)
             setCurrentGame(game)
         }
-       
-        getTheGame()
-        
-    },[props.user.favGameId])
+        if(currentGame !== props.user.favGameId) {
+            getTheGame()
+        }
+    }, [currentGame])
     
 
     return(
