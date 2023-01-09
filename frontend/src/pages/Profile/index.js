@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
+import { Navigate } from "react-router-dom";
 import axios from 'axios'
 import Comment from '../../components/Comment'
 import './gameCard.css'
@@ -8,7 +9,7 @@ import './gameCard.css'
  function Profile(props) {
     const [currentGame, setCurrentGame] = useState({})
     const [commentKey, setCommentKey] = useState(0)
-    const [toProfile, setToProfile] = useState('false')
+    const [toProfile, setToProfile] = useState(false)
     
 
     if (toProfile === true) {
