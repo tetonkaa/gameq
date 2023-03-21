@@ -12,7 +12,7 @@
     font-family: dimitri_swankregular;
     font-size: 75px;
     text-align: center;
-    color:rgb(231, 25, 25);
+    color:rgb(255, 255, 255);
     
 }
 
@@ -20,6 +20,6 @@ body{
     background-color: rebeccapurple;
 }
 .rating{
-    color:rgb( 231, 25, 25);
+    color:rgb(255, 255, 255);
     font-size: 12px;
 }
