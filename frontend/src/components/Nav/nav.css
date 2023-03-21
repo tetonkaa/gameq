@@ -5,11 +5,11 @@
     width: 0; 
     position: fixed; 
     z-index: 1; 
-    top: 15;
+    top: 0;
     left: 0;
     background-color: rgba(17, 17, 17, 1);
     overflow-x: hidden; 
-    padding-top: 40px; 
+    padding-top: 25%; 
     transition: 0.5s; 
     
     }
